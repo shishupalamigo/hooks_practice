@@ -1,0 +1,14 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background: teal;
+  padding: 1rem;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 4rem;
+  color: white;
+  font-weight: 800;
+}

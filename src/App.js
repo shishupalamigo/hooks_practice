@@ -2,13 +2,22 @@ import "./styles.css";
 import React, { useState, useEffect } from "react";
 
 export default function App() {
-  const [count, setCount] = useState(0);
-  const [time, setTime] = useState(new Date());
+
+  const [state, setState] = useState({
+      count: 0,
+      time: new Date()
+    }
+  ) 
+  const count = state.count;
+  const time = state.time;
   const [currentTime, setCurrentTime] = useState(new Date());
   useEffect(() => {
     const updateCountAndTime = () => {
-      setCount(count + 1);
-      setTime(new Date());
+      setState(prevState => ({
+        ...prevState,
+        count : count + 1,
+        time : new Date()        
+      }))
     };
     window.addEventListener("click", updateCountAndTime);
     return () => {
